@@ -25,13 +25,13 @@ def DeleteCommWhileLines(i):
 
 
 
+
+file = open("portao.asm", 'r')
+FileList = []
 section_data = []
 section_bss = []
 section_text = []
-FileList = []
 
-
-file = open("portao.asm", 'r')
 
 
 #TRATANDO AS LINHAS: Retirando comentários, linhas em branco e tabulações e quebra de linha
@@ -55,14 +55,6 @@ for i in range(len(SectionIndexes)):
     else:
         section_text = l
 
-
-
-
-
-
-#SectionData = FileList[FileList.index("section .data"): FileList.index("section .bss")]
-#SectionBss = FileList[FileList.index("section .bss"): FileList.index("section .text")]
-#SectionText = FileList[FileList.index("section .text"):]
 
 
 
