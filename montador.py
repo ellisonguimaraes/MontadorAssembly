@@ -13,19 +13,35 @@ class Instruction:
         self.len = len
 
 
+def DeleteCommWhileLines(i):
+    # Tirando tabulações
+    i = i.strip('\t')
+    i = i.strip('\n')
+    #Tirando comentários
+    if(';' in i):
+        i = i[:i.find(';')]
+    #Tirando linhas em branco
+    if(i):
+        return i
+
+    return None
+
 
 Labels = []
 Instructions = []
 
 file = open("portao.asm", 'r')
 
+
 for i in file:
-    # Tirando tabulações
-    i = i.strip('\t')
+    i = DeleteCommWhileLines(i)
+
+    if(i):
+        if("section .bss" in i):
+            print(i)
 
 
-    if(i[0] != ';' and not(i.isspace())):
-        print(i, end="")
+
 
 
 
