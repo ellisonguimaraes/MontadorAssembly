@@ -32,6 +32,7 @@ section_data = []
 section_bss = []
 section_text = []
 
+Instructions = []
 
 
 #TRATANDO AS LINHAS: Retirando comentários, linhas em branco e tabulações e quebra de linha
@@ -47,13 +48,25 @@ SectionIndexes = sorted(((FileList.index("section .bss"), "section .bss"),
      (FileList.index("section .text"), "section .text")))
 
 for i in range(len(SectionIndexes)):
-    l = FileList[SectionIndexes[i][0] : SectionIndexes[i+1][0] if i < len(SectionIndexes)-1 else len(FileList)]
+    l = FileList[SectionIndexes[i][0]+1 : SectionIndexes[i+1][0] if i < len(SectionIndexes)-1 else len(FileList)]
     if(SectionIndexes[i][1] == "section .data"):
         section_data = l
     elif(SectionIndexes[i][1] == "section .bss"):
         section_bss = l
     else:
         section_text = l
+
+
+
+
+#PERCORRENDO A SESSÃO DE TEXT E SEPARANDO OPERANDOS NA LISTA DE INSTRUÇÕES
+for i in section_text:
+    Inst = list(i.replace('\t', '*').replace(',', '*').replace(' ', '*').split('*'))
+
+    while '' in Inst:
+        Inst.remove('')
+
+    Instructions.append(Inst)
 
 
 
