@@ -40,6 +40,7 @@ class FileHandling:
 
         return section_data, section_bss, self.handling_text(section_text)
 
+        
     def handling_text(self, section_text):
         #PERCORRENDO A SESSÃO DE TEXT E SEPARANDO OPERANDOS NA LISTA DE INSTRUÇÕES
         for i in range(len(section_text)):
