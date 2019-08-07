@@ -70,6 +70,9 @@ for i in section_text:
 
 
 
+print(Instructions)
+
+
 
 file.close()
 
