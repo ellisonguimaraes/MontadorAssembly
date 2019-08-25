@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d54d851b-90bc-44e8-afbb-58d8642f2f5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/filehandling.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/filehandling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/montador.py" beforeDir="false" afterPath="$PROJECT_DIR$/montador.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,9 +44,6 @@
       <module name="trabsonsb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -61,6 +60,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.montador" />
+        <item itemvalue="Python.montador" />
+        <item itemvalue="Python.montador" />
         <item itemvalue="Python.montador" />
         <item itemvalue="Python.montador" />
       </list>
