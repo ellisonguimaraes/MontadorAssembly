@@ -1,4 +1,5 @@
 import library.filehandling as fh
+import os
 
 opcodes_hexa = {
     'mov': [['bx', 'immed', 'bb', 5],
@@ -125,7 +126,7 @@ for i in range(len(section_data)):
 
 
 # Escrevendo section .data e parte inicial no arquivo
-with open("portao.o", 'w') as file:
+with open("portao.out", 'w') as file:
     file.writelines(fh.return_object_initial())
     file.write('\n')
     str_print = "***************************************\n************ SECTION .DATA ************\n***************************************\n"
@@ -213,7 +214,7 @@ for i in range(len(list_write)):
 
 
 # ESCREVENDO section .text e parte final no arquivo.
-with open("portao.o", 'a') as file:
+with open("portao.out", 'a') as file:
     str_print = "***************************************\n************ SECTION .TEXT ************\n***************************************\n"
     breakline = 0
     four = 0
@@ -239,7 +240,10 @@ with open("portao.o", 'a') as file:
 
     file.writelines(fh.return_object_finals())
     print(str_print)
-    print("Arquivo portao.o gerado.")
+    print("Arquivo portao.out gerado. (Arquivo Hexadecimal)")
+    file.close()
+    os.system("xxd -r -ps portao.out portao.o") # Este comando pega o hexadecimal que geramos e transforma em um arquivo com formatacao de objeto
+    print("Arquivo portao.o gerado. (Arquivo Objeto)")
 
 
 
